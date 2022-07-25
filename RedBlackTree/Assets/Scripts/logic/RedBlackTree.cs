@@ -54,18 +54,18 @@ public class RedBlackTree
 
 	public RedBlackTreeNode GetRootNode()
 	{
-		return this.m_root_node;
+		return m_root_node;
 	}
 
 	public void AddNode(int key)
 	{
-		this._AddNode(this.m_root_node, key);
+		this._AddNode(m_root_node, key);
 	}
 
 
 	public RedBlackTreeNode FindNode(int key)
 	{
-		return this._FindNode(this.m_root_node, key);
+		return this._FindNode(m_root_node, key);
 	}
 
 
@@ -137,7 +137,7 @@ public class RedBlackTree
 
 	public void DeleteNode(int key)
 	{
-		this._DeleteNode(this.m_root_node, key);
+		this._DeleteNode(m_root_node, key);
 	}
 
 
@@ -167,7 +167,7 @@ public class RedBlackTree
 			child_node.ParentNode = parent_node;
 			if (parent_node == null)
 			{
-				this.m_root_node = child_node;
+				m_root_node = child_node;
 			}
 			else if (parent_node.LeftNode == delete_node)
 			{
@@ -186,7 +186,7 @@ public class RedBlackTree
 		//删除孤独一个根节点
 		else if (parent_node == null)
 		{
-			this.m_root_node = null;
+			m_root_node = null;
 		}
 		//叶子节点
 		else
@@ -249,7 +249,7 @@ public class RedBlackTree
 					curr_node = curr_node.ParentNode;
 
 					//遍历到顶
-					if (curr_node == this.m_root_node || curr_node.Color == RedBlackTreeNodeColor.Red)
+					if (curr_node == m_root_node || curr_node.Color == RedBlackTreeNodeColor.Red)
 					{
 						curr_node.Color = RedBlackTreeNodeColor.Black;
 						break;
@@ -296,7 +296,7 @@ public class RedBlackTree
 					curr_node = curr_node.ParentNode;
 
 					//遍历到顶
-					if (curr_node == this.m_root_node || curr_node.Color == RedBlackTreeNodeColor.Red)
+					if (curr_node == m_root_node || curr_node.Color == RedBlackTreeNodeColor.Red)
 					{
 						curr_node.Color = RedBlackTreeNodeColor.Black;
 						break;
@@ -355,7 +355,7 @@ public class RedBlackTree
 		}
 		else
 		{
-			this.m_root_node = node_b;
+			m_root_node = node_b;
 		}
 		node_b.ParentNode = parent_node;
 
@@ -390,7 +390,7 @@ public class RedBlackTree
 		}
 		else
 		{
-			this.m_root_node = node_b;
+			m_root_node = node_b;
 		}
 		node_b.ParentNode = parent_node;
 
@@ -413,10 +413,10 @@ public class RedBlackTree
 
 		if (curr_node == null)
 		{
-			if (this.m_root_node == null)
+			if (m_root_node == null)
 			{
-				this.m_root_node = new RedBlackTreeNode(key);
-				curr_node = this.m_root_node as RedBlackTreeNode;
+				m_root_node = new RedBlackTreeNode(key);
+				curr_node = m_root_node as RedBlackTreeNode;
 				curr_node.Color = RedBlackTreeNodeColor.Black;
 				curr_node.ParentNode = null;
 				return;
@@ -549,7 +549,7 @@ public class RedBlackTree
 		}
 
 		//1.第一个节点，不用处理,肯定黑色
-		if (curr_node == this.m_root_node)
+		if (curr_node == m_root_node)
 		{
 			curr_node.Color = RedBlackTreeNodeColor.Black;
 		}
