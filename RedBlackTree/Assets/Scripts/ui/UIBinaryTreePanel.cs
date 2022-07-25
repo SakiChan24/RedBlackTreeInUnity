@@ -100,32 +100,10 @@ public class UIBinaryTreePanel : MonoBehaviour
 
 		GameObject node_go = GameObject.Instantiate<GameObject>(m_tree_node_prefab, m_draw_nodes_node.transform);
 		UITreeNodeWidget node_widget = node_go.GetComponent<UITreeNodeWidget>();
-		//node_widget.SetKey(node.Key);
 		node_widget.SetNode(node);
 		node_widget.OnClickCallback = (int key) =>
 		{
-			m_tree.DeleteNode(key);// 这句有用
-
-			//(m_tree as AVLTree).TestRotateLeft(m_tree.GetRootNode(), key);
-			//(m_tree as AVLTree).TestRotateRight(m_tree.GetRootNode(), key);
-
-			//(m_tree as RedBlackTree).TestRotateLeft(m_tree.GetRootNode(), key);
-			//(m_tree as RedBlackTree).TestRotateRight(m_tree.GetRootNode(), key);
-
-			//BinaryTreeNode n = m_tree.FindNode(key);
-			//int factor = (m_tree as AVLTree).GetBalanceFactor(n);
-			//int h = (m_tree as AVLTree).CalcHeight(n);
-			//Debug.LogFormat("h = {0}", h);
-			//int factor =(m_tree as AVLTree).TestGetBalanceFactor(n);
-			//Debug.LogFormat("factor = {0}", factor);
-
-			//(m_tree as AVLTree).TestBalanceTree(key);
-
-			//BinaryTreeNode n = m_tree.FindNode(key);
-			//Debug.LogFormat("{0}", n != null ? n.Key : -1);
-
-			//RedBlackTreeNode n = (m_tree as RedBlackTree).TestGetSuccessorNode(key);
-			//Debug.LogFormat("{0}", n != null ? n.Key : -1);
+			m_tree.DeleteNode(key);
 
 			this.DrawTree();
 		};
